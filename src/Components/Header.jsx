@@ -6,7 +6,7 @@ export default function Header() {
 	return (
 		<>
 			{isAuthenticated ? (
-				<div className="navbar bg-base-100">
+				<div className="navbar ">
 					<div className="flex-1">
 						<a className="btn btn-ghost normal-case text-xl">
 							daisyUI
@@ -50,7 +50,7 @@ export default function Header() {
 					</div>
 				</div>
 			) : (
-				<div className="navbar bg-base-100">
+				<div className="navbar">
 					<div className="flex-1">
 						<a className="btn btn-ghost normal-case text-xl">
 							daisyUI

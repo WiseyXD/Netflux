@@ -11,7 +11,7 @@ function App() {
 	console.log(user, isAuthenticated);
 	return (
 		<>
-			<Header />
+			{/* <Header /> */}
 			{/* {isAuthenticated ? <LogoutButton /> : <LoginButton />} */}
 			<Routes>
 				<Route path="/" element={<LoginButton />} />
