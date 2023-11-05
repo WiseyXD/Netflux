@@ -1,11 +1,11 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-
+import LoginButton from "./Components/LoginButton";
+import LogoutButton from "./Components/LogoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
 function App() {
 	const [count, setCount] = useState(0);
-
-	return <>Hello</>;
+	const { isAuthenticated, user } = useAuth0();
+	return <>{isAuthenticated ? <LogoutButton /> : <LoginButton />}</>;
 }
 
 export default App;
