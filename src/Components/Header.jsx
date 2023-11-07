@@ -29,7 +29,7 @@ export default function Header() {
 								className="btn btn-ghost btn-circle avatar"
 							>
 								<div className="w-10 rounded-full">
-									<img src={userDetails.picture} />
+									<img src={userDetails?.picture} />
 								</div>
 							</label>
 							<ul

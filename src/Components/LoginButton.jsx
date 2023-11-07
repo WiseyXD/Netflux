@@ -2,11 +2,14 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import bgPic from "../assets/netflixbg.jpg";
+
 export default function LoginButton() {
 	const { loginWithRedirect, isAuthenticated } = useAuth0();
 	const navigate = useNavigate();
+
 	if (isAuthenticated) {
 		navigate("/browse");
+		return;
 	}
 	return (
 		<div>
@@ -36,6 +39,5 @@ export default function LoginButton() {
 				</div>
 			</div>
 		</div>
-		// Null Day
 	);
 }

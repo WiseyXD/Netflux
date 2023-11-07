@@ -5,15 +5,18 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Context/Slices/authSlice";
 import { useNavigate } from "react-router-dom";
+import { useGetMovieAuthQuery } from "../Services/movieApi";
 export default function Browse() {
 	const { isAuthenticated, user } = useAuth0();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	const { data, error } = useGetMovieAuthQuery();
 	if (user) {
 		dispatch(addUser(user));
 	} else {
 		navigate("/");
 	}
+	console.log(error);
 
 	return (
 		<div>
