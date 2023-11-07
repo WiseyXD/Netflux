@@ -8,7 +8,7 @@ import { Route, Routes } from "react-router-dom";
 function App() {
 	const [count, setCount] = useState(0);
 	const { isAuthenticated, user } = useAuth0();
-	console.log(user, isAuthenticated);
+	// console.log(user, isAuthenticated);
 	return (
 		<>
 			{/* <Header /> */}
