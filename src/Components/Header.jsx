@@ -1,15 +1,18 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useSelector } from "react-redux";
 
 export default function Header() {
 	const { isAuthenticated } = useAuth0();
+	const userDetails = useSelector((state) => state.auth.value);
+	console.log(userDetails);
 	return (
 		<>
 			{isAuthenticated ? (
 				<div className="navbar ">
 					<div className="flex-1">
 						<a className="btn btn-ghost normal-case text-xl">
-							daisyUI
+							NETFLUX
 						</a>
 					</div>
 					<div className="flex-none gap-2">
@@ -26,7 +29,7 @@ export default function Header() {
 								className="btn btn-ghost btn-circle avatar"
 							>
 								<div className="w-10 rounded-full">
-									<img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+									<img src={userDetails.picture} />
 								</div>
 							</label>
 							<ul
@@ -53,10 +56,10 @@ export default function Header() {
 				<div className="navbar">
 					<div className="flex-1">
 						<a className="btn btn-ghost normal-case text-xl">
-							daisyUI
+							NETFLUX
 						</a>
 					</div>
-					<div className="flex-none">
+					{/* <div className="flex-none">
 						<ul className="menu menu-horizontal px-1">
 							<li>
 								<a>Link</a>
@@ -75,7 +78,7 @@ export default function Header() {
 								</details>
 							</li>
 						</ul>
-					</div>
+					</div> */}
 				</div>
 			)}
 		</>
