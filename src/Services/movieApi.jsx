@@ -10,7 +10,7 @@ export const movieApi = createApi({
 			query: () => "authentication",
 			headers: {
 				accept: "application/json",
-				Authorization: "Bearer 8413b7f31999de398c3c90d77fd00e41",
+				Authorization: "Bearer 381319eaecf52258b28d671a4643a236",
 			},
 		}),
 	}),
