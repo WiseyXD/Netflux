@@ -3,7 +3,7 @@ export const API_OPTIONS = {
 	headers: {
 		accept: "application/json",
 		Authorization:
-			"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1Yzg5NWFlYzU2ZjFiMzVjZDYyNmM3NDdjZTQxODNlMSIsInN1YiI6IjY0ODIwOTlhZTM3NWMwMDEzOWJlZTAyZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UL4U1Xyc3pGQouB3cMpyAvgHxYTOAaRW8rmUJ2td1ew",
+			"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NDEzYjdmMzE5OTlkZTM5OGMzYzkwZDc3ZmQwMGU0MSIsInN1YiI6IjY1NGJjNGVhMjg2NmZhMDBmZTAxYjMxNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bgIuP2VytB0kLYuOp1Cf5SVUUZ0VZTfLy4Itgri-EK4",
 	},
 };
 
