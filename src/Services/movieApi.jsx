@@ -16,7 +16,10 @@ export const movieApi = createApi({
 		getAuthentication: builder.query({
 			query: () => "authentication",
 		}),
+		getNowPlaying: builder.query({
+			query: () => "movie/now_playing?language=en-US&page=1",
+		}),
 	}),
 });
 
-export const { useGetAuthenticationQuery } = movieApi;
+export const { useGetAuthenticationQuery, useGetNowPlayingQuery } = movieApi;

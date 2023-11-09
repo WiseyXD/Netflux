@@ -1,9 +1,12 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
+import { removeUser } from "../Context/Slices/authSlice";
 export default function Header() {
-	const { isAuthenticated } = useAuth0();
+	const { isAuthenticated, logout } = useAuth0();
+
+	const dispatch = useDispatch();
 	const userDetails = useSelector((state) => state.auth.value);
 	console.log(userDetails);
 	return (
@@ -46,7 +49,14 @@ export default function Header() {
 									<a>Settings</a>
 								</li>
 								<li>
-									<a>Logout</a>
+									<a
+										onClick={() => {
+											logout();
+											dispatch(removeUser());
+										}}
+									>
+										Logout
+									</a>
 								</li>
 							</ul>
 						</div>
