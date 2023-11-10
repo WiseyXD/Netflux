@@ -19,7 +19,14 @@ export const movieApi = createApi({
 		getNowPlaying: builder.query({
 			query: () => "movie/now_playing?language=en-US&page=1",
 		}),
+		getTopMovieTrailer: builder.query({
+			query: (movie_id) => `movie/${movie_id}/videos`,
+		}),
 	}),
 });
 
-export const { useGetAuthenticationQuery, useGetNowPlayingQuery } = movieApi;
+export const {
+	useGetAuthenticationQuery,
+	useGetNowPlayingQuery,
+	useGetTopMovieTrailerQuery,
+} = movieApi;
