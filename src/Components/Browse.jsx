@@ -8,9 +8,11 @@ import { useNavigate } from "react-router-dom";
 import {
 	useGetAuthenticationQuery,
 	useGetNowPlayingQuery,
+	useGetUpcomingMoviesQuery,
 } from "../Services/movieApi";
 import { setMovies } from "../Context/Slices/movieSlice";
 import VideoContainer from "./VideoContainer";
+import CarouselContainer from "./CarouselContainer";
 
 export default function Browse() {
 	const { isAuthenticated, user } = useAuth0();
@@ -34,6 +36,9 @@ export default function Browse() {
 		<div>
 			<Header />
 			<VideoContainer />
+			<div className="max-w-full w-11/12 mx-auto my-0">
+				<CarouselContainer />
+			</div>
 		</div>
 	);
 }
