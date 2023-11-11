@@ -36,7 +36,7 @@ export default function Browse() {
 		<div>
 			<Header />
 			<VideoContainer />
-			<div className="max-w-full w-11/12 mx-auto my-0">
+			<div className="max-w-full w-11/12 mx-auto my-0 mb-5">
 				<CarouselContainer />
 			</div>
 		</div>

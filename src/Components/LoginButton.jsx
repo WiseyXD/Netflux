@@ -9,7 +9,6 @@ export default function LoginButton() {
 
 	if (isAuthenticated) {
 		navigate("/browse");
-		return;
 	}
 	return (
 		<div>
@@ -30,7 +29,7 @@ export default function LoginButton() {
 							In deleniti eaque aut repudiandae et a id nisi.
 						</p>
 						<button
-							className="btn btn-primary"
+							className="btn btn-wide bg-red-600 hover:bg-red-400 rounded-md"
 							onClick={() => loginWithRedirect()}
 						>
 							Get Started
