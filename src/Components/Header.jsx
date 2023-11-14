@@ -1,14 +1,20 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { changeLanguage, removeUser } from "../Context/Slices/authSlice";
+import {
+	changeLanguage,
+	removeUser,
+	toggleGpt,
+} from "../Context/Slices/authSlice";
 import languages from "../Utils/languageConstant";
 export default function Header() {
 	const { isAuthenticated, logout } = useAuth0();
-
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const userDetails = useSelector((state) => state.auth.value);
 	const currentLang = useSelector((state) => state.auth.language);
+	const gpt = useSelector((state) => state.auth.gptPage);
 
 	return (
 		<>
@@ -21,11 +27,19 @@ export default function Header() {
 					</div>
 					<div className="flex-none gap-2">
 						<div className="form-control">
-							<input
-								type="text"
-								placeholder="Search"
-								className="input input-bordered w-24 md:w-auto"
-							/>
+							<button
+								className="btn btn-wide bg-red-500 hover:bg-white hover:text-red-500 hover:border hover:border-red-500"
+								onClick={() => {
+									if (gpt) {
+										navigate("/browse/gpt");
+									} else {
+										navigate("/browse");
+									}
+									dispatch(toggleGpt(!gpt));
+								}}
+							>
+								{gpt ? "GPT" : "Home"}
+							</button>
 						</div>
 
 						<div className="dropdown dropdown-end">
