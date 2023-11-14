@@ -31,7 +31,7 @@ export default function Browse() {
 	} else {
 		dispatch(setMovies(data.results));
 	}
-	// Null Day
+	// Null D
 	return (
 		<div>
 			<Header />
