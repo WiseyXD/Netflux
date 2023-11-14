@@ -1,14 +1,15 @@
-import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { removeUser } from "../Context/Slices/authSlice";
+import { changeLanguage, removeUser } from "../Context/Slices/authSlice";
+import languages from "../Utils/languageConstant";
 export default function Header() {
 	const { isAuthenticated, logout } = useAuth0();
 
 	const dispatch = useDispatch();
 	const userDetails = useSelector((state) => state.auth.value);
-	console.log(userDetails);
+	const currentLang = useSelector((state) => state.auth.language);
+
 	return (
 		<>
 			{isAuthenticated ? (
@@ -26,6 +27,7 @@ export default function Header() {
 								className="input input-bordered w-24 md:w-auto"
 							/>
 						</div>
+
 						<div className="dropdown dropdown-end">
 							<label
 								tabIndex={0}
@@ -41,12 +43,29 @@ export default function Header() {
 							>
 								<li>
 									<a className="justify-between">
-										Profile
+										{languages[currentLang].profile}
 										<span className="badge">New</span>
 									</a>
 								</li>
 								<li>
 									<a>Settings</a>
+								</li>
+								<li>
+									<select
+										className="select select-ghost max-w-xs"
+										onChange={(e) => {
+											dispatch(
+												changeLanguage(e.target.value)
+											);
+										}}
+									>
+										<option disabled selected>
+											Language
+										</option>
+										<option value="English">English</option>
+										<option value="Hindi">Hindi</option>
+										<option value="Marathi">Marathi</option>
+									</select>
 								</li>
 								<li>
 									<a

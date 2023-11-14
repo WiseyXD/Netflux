@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	value: null,
+	language: "English",
 };
 
 export const authSlice = createSlice({
@@ -9,18 +10,17 @@ export const authSlice = createSlice({
 	initialState,
 	reducers: {
 		addUser: (state, action) => {
-			// Redux Toolkit allows us to write "mutating" logic in reducers. It
-			// doesn't actually mutate the state because it uses the Immer library,
-			// which detects changes to a "draft state" and produces a brand new
-			// immutable state based off those changes
 			state.value = action.payload;
 		},
 		removeUser: (state) => {
 			state.value = null;
 		},
+		changeLanguage: (state, action) => {
+			state.language = action.payload;
+		},
 	},
 });
 
-export const { addUser, removeUser } = authSlice.actions;
+export const { addUser, removeUser, changeLanguage } = authSlice.actions;
 
 export default authSlice.reducer;
