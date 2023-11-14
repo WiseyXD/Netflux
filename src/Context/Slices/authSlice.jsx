@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	value: null,
 	language: "English",
+	gptPage: false,
 };
 
 export const authSlice = createSlice({
@@ -18,9 +19,13 @@ export const authSlice = createSlice({
 		changeLanguage: (state, action) => {
 			state.language = action.payload;
 		},
+		toggleGpt: (state, action) => {
+			state.gptPage = action.payload;
+		},
 	},
 });
 
-export const { addUser, removeUser, changeLanguage } = authSlice.actions;
+export const { addUser, removeUser, changeLanguage, toggleGpt } =
+	authSlice.actions;
 
 export default authSlice.reducer;
