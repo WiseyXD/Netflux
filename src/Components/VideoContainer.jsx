@@ -4,7 +4,7 @@ import { useGetTopMovieTrailerQuery } from "../Services/movieApi";
 export default function VideoContainer() {
 	const dispatch = useDispatch();
 	const topMovie = useSelector((state) => state.movie.movies[1]);
-	console.log(topMovie);
+
 	dispatch(setTopMovie(topMovie));
 	const { id, title, overview, vote_average } = topMovie;
 	const { data, error, isLoading } = useGetTopMovieTrailerQuery(id);
@@ -12,7 +12,7 @@ export default function VideoContainer() {
 		return null;
 	}
 	const trailer = data.results.find((item) => item.type === "Trailer");
-	console.log(trailer);
+
 	const trailerKey = trailer?.key;
 	return (
 		<div className="hero min-h-screen">
