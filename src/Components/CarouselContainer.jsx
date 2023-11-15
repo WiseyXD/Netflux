@@ -18,7 +18,6 @@ export default function CarouselContainer() {
 	) {
 		return null;
 	}
-	console.log(upcomingMovies.data.results);
 
 	return (
 		<div className="flex flex-col gap-8 mt-5">

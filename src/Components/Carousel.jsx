@@ -1,5 +1,4 @@
 export default function Carousel({ title, movies }) {
-	console.log(movies);
 	return (
 		<div className="w-full px-3">
 			<h1 className=" text-white text-2xl my-2">{title}</h1>

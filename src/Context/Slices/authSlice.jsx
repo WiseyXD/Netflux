@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	value: null,
 	language: "English",
-	gptPage: false,
+	gptPage: true,
 };
 
 export const authSlice = createSlice({
